@@ -18,16 +18,16 @@ public interface ProductService {
 
     public void deleteAllProducts();
 
+    public List<Product> getCategoryMoto(String category);
+
+    public List<Product> getCategoryMobile(String category);
+
+    public List<Product> findByCategory(String category);
+
     /**
      * Methods for parsing
      */
     public void save(Product product);
 
     public boolean isExist(String obj);
-
-    public List<Product> getCategoryMoto(String category);
-
-    public List<Product> getCategoryMobile(String category);
-
-    public List<Product> findByCategory(String category);
 }
