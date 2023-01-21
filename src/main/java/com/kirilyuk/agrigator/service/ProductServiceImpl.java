@@ -53,6 +53,7 @@ public class ProductServiceImpl implements ProductService {
         dao.deleteAll();
     }
 
+
     @Override
     public List<Product> getCategoryMoto(String category) {
 
