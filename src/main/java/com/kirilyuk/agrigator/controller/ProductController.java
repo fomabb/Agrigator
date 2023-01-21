@@ -20,13 +20,11 @@ public class ProductController {
 
     @GetMapping("/find/")
     public List<Product> getAllProducts() {
-
         return service.getAllProducts();
     }
 
     @PostMapping("/save")
     public void saveProduct(@RequestBody List<Product> product) {
-
         service.saveProduct(product);
     }
 
