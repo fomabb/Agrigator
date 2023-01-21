@@ -67,7 +67,7 @@ public class ProductController {
         return service.getCategoryMobile(category);
     }
 
-    @GetMapping("/find/category") // gjbcr категории тест db
+    @GetMapping("/find/category") // вывод категории тест db
     public List<Product> findByCategory(@RequestParam("category") String category) {
 
         return service.findByCategory(category);

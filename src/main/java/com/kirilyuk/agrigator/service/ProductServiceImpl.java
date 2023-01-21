@@ -53,19 +53,23 @@ public class ProductServiceImpl implements ProductService {
         dao.deleteAll();
     }
 
+
     @Override
     public List<Product> getCategoryMoto(String category) {
-        return null;
+
+        return dao.getCategoryMoto(category);
     }
 
     @Override
     public List<Product> getCategoryMobile(String category) {
-        return null;
+
+        return dao.getCategoryMobile(category);
     }
 
     @Override
     public List<Product> findByCategory(String category) {
-        return null;
+
+        return dao.findByCategory(category);
     }
 
     @Override

@@ -11,15 +11,15 @@ import java.util.List;
 @Repository
 public interface ProductDAO extends JpaRepository<Product, Long> {
 
-    @Query("select obj from Product obj where obj.title=:title")
+    @Query("select obj from Product obj where obj.title ilike %:title%")
     public List<Product> getTitleProduct(@Param("title") String title);
 
-    @Query("select  obj from Product obj where obj.category='Moto'")
+    @Query("select  obj from Product obj where obj.category like 'Moto'")
     public List<Product> getCategoryMoto(String category);
 
     @Query("select obj from Product obj where obj.category='Mobile'")
     public List<Product> getCategoryMobile(String category);
 
-    @Query("select obj from Product obj where obj.category=:category")
+    @Query("select obj from Product obj where obj.category ilike :category")
     public List<Product> findByCategory(@Param("category") String category);
 }
