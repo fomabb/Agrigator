@@ -18,7 +18,7 @@ public class ProductController {
         this.service = service;
     }
 
-    @GetMapping("/find/")
+    @GetMapping("/find/all")
     public List<Product> getAllProducts() {
 
         return service.getAllProducts();
@@ -34,7 +34,7 @@ public class ProductController {
         return service.getProductById(id);
     }
 
-    @GetMapping("/title")
+    @GetMapping("/find/title")
     public List<Product> getTitleProduct(@RequestParam("title") String title) {
 
         return service.getTitleProduct(title);
@@ -75,9 +75,9 @@ public class ProductController {
 
 /**
  * INPOINTs
- * /api/product/find/               - вывод всех продуктов
+ * /api/product/find/all            - вывод всех продуктов
  * /api/product/find/{id}           - вывод по ID продукта
- * /api/product/title               - поиск по названию товара
+ * /api/product/find/title          - поиск по названию товара
  * /api/product/category/moto       - вывод по категории (test_db)
  * /api/product/category/mobile     - вывод по категории (test_db)
  * /api/product/find/category       - поиск по категории
