@@ -43,7 +43,7 @@ DELETE | /api/clean | clean db
 METHOD | PATH | DESCRIPTION
 ------------|-----|------------
 GET | /api/product/category/drive_technology | get products by category Drive technology
-GET | /api/product/category/automation_technology | get products by category Automation_technology
+GET | /api/product/category/automation_technology | get products by category Automation technology
 
 ### My application requests in Postman
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d9af219fea3fe665c736?action=collection%2Fimport)
