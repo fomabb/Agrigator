@@ -1,5 +1,6 @@
 package com.kirilyuk.agrigator.controller;
 
+import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,12 @@ public class ProductController {
     @Autowired
     public ProductController(ProductService service) {
         this.service = service;
+    }
+
+    @GetMapping("/test")
+    public List<FindAllDTO> testFindAllDTO() {
+
+        return service.testFindAllDTO();
     }
 
     @GetMapping("/find/all")
@@ -55,13 +62,13 @@ public class ProductController {
     }
 
     @GetMapping("/category/drive_technology") // вывод по определенной категории тест db
-    public List<Product> getCategoryMoto(String category) {
+    public List<Product> getCategoryDriveTechnology(String category) {
 
         return service.getCategoryMoto(category);
     }
 
     @GetMapping("/category/automation_technology") // вывод по определенной категории тест db
-    public List<Product> getCategoryMobile(String category) {
+    public List<Product> getCategoryAutomationTechnology(String category) {
 
         return service.getCategoryMobile(category);
     }
@@ -72,17 +79,3 @@ public class ProductController {
         return service.findByCategory(category);
     }
 }
-
-/**
- * INPOINTs
- * /api/product/find/all            - вывод всех продуктов
- * /api/product/find/{id}           - вывод по ID продукта
- * /api/product/find/title          - поиск по названию товара
- * /api/product/category/moto       - вывод по категории (test_db)
- * /api/product/category/mobile     - вывод по категории (test_db)
- * /api/product/find/category       - поиск по категории
- * for Admin
- * /api/product/save                - добавить продукт
- * /api/product/delete/{id}         - удалить продукт
- * /api/product/clean               - отчистить базу данных
- */

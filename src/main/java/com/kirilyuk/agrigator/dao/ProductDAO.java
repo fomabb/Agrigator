@@ -1,5 +1,6 @@
 package com.kirilyuk.agrigator.dao;
 
+import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,12 +15,12 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     @Query("select obj from Product obj where obj.title ilike %:title%")
     public List<Product> getTitleProduct(@Param("title") String title);
 
-    @Query("select  obj from Product obj where obj.category like 'Moto'")
-    public List<Product> getCategoryMoto(String category);
+    @Query("select  obj from Product obj where obj.category='Drive technology'")
+    public List<Product> getCategoryDriveTechnology(String category);
 
-    @Query("select obj from Product obj where obj.category='Mobile'")
-    public List<Product> getCategoryMobile(String category);
+    @Query("select obj from Product obj where obj.category='Automation technology'")
+    public List<Product> getCategoryAutomationTechnology(String category);
 
-    @Query("select obj from Product obj where obj.category ilike :category")
+    @Query("select obj from Product obj where obj.category=:category")
     public List<Product> findByCategory(@Param("category") String category);
 }

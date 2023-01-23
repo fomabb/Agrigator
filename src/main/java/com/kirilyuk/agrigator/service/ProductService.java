@@ -1,5 +1,6 @@
 package com.kirilyuk.agrigator.service;
 
+import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 
 import java.util.List;
@@ -30,4 +31,6 @@ public interface ProductService {
     public void save(Product product);
 
     public boolean isExist(String obj);
+
+    public List<FindAllDTO> testFindAllDTO();
 }

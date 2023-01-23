@@ -1,11 +1,14 @@
 package com.kirilyuk.agrigator.service;
 
 import com.kirilyuk.agrigator.dao.ProductDAO;
+import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -57,13 +60,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getCategoryMoto(String category) {
 
-        return dao.getCategoryMoto(category);
+        return dao.getCategoryDriveTechnology(category);
     }
 
     @Override
     public List<Product> getCategoryMobile(String category) {
 
-        return dao.getCategoryMobile(category);
+        return dao.getCategoryAutomationTechnology(category);
     }
 
     @Override
@@ -88,5 +91,13 @@ public class ProductServiceImpl implements ProductService {
             }
         }
         return false;
+    }
+
+    @Override
+    public List<FindAllDTO> testFindAllDTO() {
+
+        return dao.findAll().stream().map(product -> new FindAllDTO(product.getTitle(), product.getInfo(),
+                        product.getCategory(), product.getImage()))
+                .collect(Collectors.toList());
     }
 }
