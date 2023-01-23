@@ -23,8 +23,6 @@
 METHOD | PATH | DESCRIPTION
 ------------|-----|------------
 POST | /api/users | register new employee
-DELETE | /api/users/{id} | delete user by id
-PUT | /api/users/{id} | update department by id
 GET | /api/product/find/all | get all products
 GET | /api/product/find/{id} | get product by id
 GET | /api/product/find/title | product search by by title
