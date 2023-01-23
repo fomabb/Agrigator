@@ -13,7 +13,7 @@ public class Users {
     private Long id;
 
     @Column(name = "email")
-    private String email;
+    private String email; // Это поле нужно убрать!
 
     @Column(name = "name")
     private String name;
