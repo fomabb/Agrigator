@@ -54,13 +54,13 @@ public class ProductController {
         service.deleteAllProducts();
     }
 
-    @GetMapping("/category/moto") // вывод по определенной категории тест db
+    @GetMapping("/category/drive_technology") // вывод по определенной категории тест db
     public List<Product> getCategoryMoto(String category) {
 
         return service.getCategoryMoto(category);
     }
 
-    @GetMapping("/category/mobile") // вывод по определенной категории тест db
+    @GetMapping("/category/automation_technology") // вывод по определенной категории тест db
     public List<Product> getCategoryMobile(String category) {
 
         return service.getCategoryMobile(category);
