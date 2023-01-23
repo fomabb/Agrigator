@@ -73,6 +73,7 @@ public class ProductController {
     }
 }
 
+
 /**
  * INPOINTs
  * /api/product/find/all            - вывод всех продуктов
