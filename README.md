@@ -14,6 +14,7 @@
 # Data model
 ## ER diagram for the data model
 
+![img_db.png](img_db.png)
 
 ## RESTful API
 
