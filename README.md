@@ -4,6 +4,7 @@
   - Hibernate 
   - PostgresSQL DB 
   - Spring Boot
+  - Spring security
 ### Short description of the project
   - Standalone application providing REST API
 
