@@ -31,11 +31,6 @@ public class ProductController {
         return service.getAllProducts();
     }
 
-    @PostMapping("/save")
-    public void saveProduct(@RequestBody List<Product> product) {
-        service.saveProduct(product);
-    }
-
     @GetMapping("/find/{id}")
     public Product getProductById(@PathVariable("id") Long id) {
         return service.getProductById(id);
@@ -45,20 +40,6 @@ public class ProductController {
     public List<Product> getTitleProduct(@RequestParam("title") String title) {
 
         return service.getTitleProduct(title);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable("id") Long id) {
-
-        service.deleteProduct(id);
-
-        return "Product with ID=" + id + " was deleted";
-    }
-
-    @DeleteMapping("/clean")
-    public void deleteAllProducts() {
-
-        service.deleteAllProducts();
     }
 
     @GetMapping("/category/drive_technology") // вывод по определенной категории тест db

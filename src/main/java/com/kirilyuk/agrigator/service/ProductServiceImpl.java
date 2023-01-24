@@ -26,12 +26,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void saveProduct(List<Product> product) {
-
-        dao.saveAll(product);
-    }
-
-    @Override
     public Product getProductById(Long id) {
 
         return dao.findById(id).orElseThrow();
@@ -42,19 +36,6 @@ public class ProductServiceImpl implements ProductService {
 
         return dao.getTitleProduct(title);
     }
-
-    @Override
-    public void deleteProduct(Long id) {
-
-        dao.deleteById(id);
-    }
-
-    @Override
-    public void deleteAllProducts() {
-
-        dao.deleteAll();
-    }
-
 
     @Override
     public List<Product> getCategoryDriveTechnology(String category) {
@@ -78,12 +59,6 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> findByCategory(String category) {
 
         return dao.findByCategory(category);
-    }
-
-    @Override
-    public void save(Product product) {
-
-        dao.save(product);
     }
 
     @Override

@@ -14,7 +14,7 @@
 # Data model
 ## ER diagram for the data model
 
-![redm_db.png](src%2Fmain%2Fresources%2Fimg%2Fredm_db.png)
+![redm_db.png](src/main/resources/img/readme_db.png)
 
 ## RESTful API
 
@@ -29,11 +29,14 @@ GET | /api/product/find/category | get product by category
 
 **2. API Description of general methods for Products only for admin**
 
-METHOD | PATH | DESCRIPTION
-------------|-----|------------
-POST | /api/product/save | save new products
-DELETE | /api/product/delete/{id} | delete product by id
-DELETE | /api/clean | clean db
+METHOD | PATH               | DESCRIPTION
+------------|--------------------|------------
+POST | /login             | visit to admin page
+POST | /logout            | exit from admin page
+GET | /admin/find/all    | get all products
+GET | /admin/user/all    | get all users
+DELETE | /admin/delete/{id} | delete product by id
+DELETE | /admin/clean       | clean db
 
 **3. API Description of test methods for Products**
 
