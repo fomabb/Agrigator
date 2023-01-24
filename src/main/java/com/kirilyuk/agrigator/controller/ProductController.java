@@ -64,13 +64,19 @@ public class ProductController {
     @GetMapping("/category/drive_technology") // вывод по определенной категории тест db
     public List<Product> getCategoryDriveTechnology(String category) {
 
-        return service.getCategoryMoto(category);
+        return service.getCategoryDriveTechnology(category);
     }
 
     @GetMapping("/category/automation_technology") // вывод по определенной категории тест db
     public List<Product> getCategoryAutomationTechnology(String category) {
 
-        return service.getCategoryMobile(category);
+        return service.getCategoryAutomationTechnology(category);
+    }
+
+    @GetMapping("/category/everything") //... and everything else you need
+    public List<Product> getCategoryEverythingElse(String category) {
+
+        return service.getCategoryEverythingElse(category);
     }
 
     @GetMapping("/find/category") // вывод категории тест db

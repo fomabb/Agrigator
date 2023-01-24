@@ -19,9 +19,11 @@ public interface ProductService {
 
     public void deleteAllProducts();
 
-    public List<Product> getCategoryMoto(String category);
+    public List<Product> getCategoryDriveTechnology(String category);
 
-    public List<Product> getCategoryMobile(String category);
+    public List<Product> getCategoryAutomationTechnology(String category);
+
+    public List<Product> getCategoryEverythingElse(String category);
 
     public List<Product> findByCategory(String category);
 
@@ -33,4 +35,5 @@ public interface ProductService {
     public boolean isExist(String obj);
 
     public List<FindAllDTO> testFindAllDTO();
+
 }

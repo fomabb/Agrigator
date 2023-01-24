@@ -6,7 +6,6 @@ import com.kirilyuk.agrigator.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -58,15 +57,21 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public List<Product> getCategoryMoto(String category) {
+    public List<Product> getCategoryDriveTechnology(String category) {
 
         return dao.getCategoryDriveTechnology(category);
     }
 
     @Override
-    public List<Product> getCategoryMobile(String category) {
+    public List<Product> getCategoryAutomationTechnology(String category) {
 
         return dao.getCategoryAutomationTechnology(category);
+    }
+
+    @Override
+    public List<Product> getCategoryEverythingElse(String category) {
+
+        return dao.getCategoryEverythingElse(category);
     }
 
     @Override

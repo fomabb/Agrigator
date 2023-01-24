@@ -1,6 +1,5 @@
 package com.kirilyuk.agrigator.dao;
 
-import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -20,6 +19,9 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
 
     @Query("select obj from Product obj where obj.category='Automation technology'")
     public List<Product> getCategoryAutomationTechnology(String category);
+
+    @Query("select obj from Product obj where obj.category like '... and everything else you need'")
+    public List<Product> getCategoryEverythingElse(String category);  // ... and everything else you need
 
     @Query("select obj from Product obj where obj.category=:category")
     public List<Product> findByCategory(@Param("category") String category);

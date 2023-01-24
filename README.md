@@ -37,10 +37,11 @@ DELETE | /api/clean | clean db
 
 **3. API Description of test methods for Products**
 
-METHOD | PATH | DESCRIPTION
-------------|-----|------------
-GET | /api/product/category/drive_technology | get products by category Drive technology
-GET | /api/product/category/automation_technology | get products by category Automation technology
+METHOD | PATH                                        | DESCRIPTION
+------------|---------------------------------------------|------------
+GET | /api/product/category/drive_technology      | get products by category Drive technology
+GET | /api/product/category/everything | get products by category everything else you need
+GET | /api/product/test                           | get all products DTO for test
 
 ### My application requests in Postman
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/d9af219fea3fe665c736?action=collection%2Fimport)
