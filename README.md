@@ -5,6 +5,7 @@
   - PostgresSQL DB 
   - Spring Boot
   - Spring security
+  - JSOUP
 ### Short description of the project
   - Standalone application providing REST API
 
