@@ -5,6 +5,7 @@ import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.entities.Users;
 import com.kirilyuk.agrigator.service.ProductService;
 import com.kirilyuk.agrigator.service.UserService;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,10 +22,10 @@ public class AdminController {
         this.usersService = usersService;
     }
 
-    @GetMapping("/find/all")
-    public List<Product> getAll() {
-        return service.getAllProducts();
-    }
+//    @GetMapping("/find/all")
+//    public List<Product> getAll() {
+//        return service.getAllProducts(PageRequest.of(offset, limit));
+//    }
 
     @DeleteMapping("/delete/{id}")
     public String deleteProduct(@PathVariable("id") Long id) {

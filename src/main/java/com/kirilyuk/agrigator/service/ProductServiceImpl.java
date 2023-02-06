@@ -4,6 +4,7 @@ import com.kirilyuk.agrigator.dao.ProductDAO;
 import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
+    public List<Product> getAllProducts(PageRequest of) {
 
         return dao.findAll();
     }

@@ -4,6 +4,7 @@ import com.kirilyuk.agrigator.dto.FindAllDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,9 +27,10 @@ public class ProductController {
     }
 
     @GetMapping("/find/all")
-    public List<Product> getAllProducts() {
+    public List<Product> getAllProducts(@RequestParam("offset") Integer offset,
+                                        @RequestParam("limit") Integer limit) {
 
-        return service.getAllProducts();
+        return service.getAllProducts(PageRequest.of(offset, limit));
     }
 
     @GetMapping("/find/{id}")
