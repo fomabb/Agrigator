@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface ProductDAO extends JpaRepository<Product, Long> {
 
+//    make_tsvector_idx(title, info)
 
     @Query("select obj from Product obj where obj.parent_category=:parent_category")
     List<Product> findByCategoryParent(@Param("parent_category") String category);
@@ -18,6 +19,11 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     @Query("select obj from Product obj where obj.child_category=:child_category")
     List<Product> findByCategoryChild(@Param("child_category") String category);
 
-    @Query("select obj from Product obj where obj.title ilike %:text% or obj.info ilike %:text%")
-    List<Product> findAllProductByDescription(String text);
+    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery(:text := 'samsung')",
+            nativeQuery = true)
+    List<Product> findAllProductByDescription(@Param("text") String text);
+
+    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery('samsung')",
+            nativeQuery = true)
+    List<Product> searchTest();
 }

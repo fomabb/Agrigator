@@ -16,6 +16,8 @@ public interface ProductService {
 
     List<Product> findAllProductByDescription(String text);
 
+    List<Product> searchTest();
+
     /**
      * Methods for parsing
      */

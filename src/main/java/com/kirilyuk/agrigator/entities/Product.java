@@ -1,12 +1,15 @@
 package com.kirilyuk.agrigator.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Indexed;
 
 @Entity
 @Table(name = "product")
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 public class Product {
     @Id
