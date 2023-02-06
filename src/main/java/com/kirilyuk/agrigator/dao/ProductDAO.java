@@ -19,11 +19,12 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
     @Query("select obj from Product obj where obj.child_category=:child_category")
     List<Product> findByCategoryChild(@Param("child_category") String category);
 
-    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery(:text := 'samsung')",
+    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery(:text)",
             nativeQuery = true)
     List<Product> findAllProductByDescription(@Param("text") String text);
 
-    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery('samsung')",
-            nativeQuery = true)
+//    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery('samsung')",
+//            nativeQuery = true)
+    @Query(value = "select * from product p where make_tsvector_idx(p.title, p.info) @@ to_tsquery('samsung')", nativeQuery = true)
     List<Product> searchTest();
 }

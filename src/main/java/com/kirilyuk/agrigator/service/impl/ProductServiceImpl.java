@@ -54,6 +54,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public List<Product> searchTest() {
 
         return dao.searchTest();
