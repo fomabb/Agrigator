@@ -19,5 +19,5 @@ public class UserReviewDTO {
 
     private StatusReview statusReview;
 
-    private int statusReviewId = 1;
+    private int statusReviewId;
 }

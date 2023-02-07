@@ -54,12 +54,11 @@ public class UserServiceImpl implements UserService {
         userReview.setStatusReviewId(reviews.getStatusReviewId());
 
         switch (userReview.getStatusReviewId()) {
-            case 1 -> userReview.setStatusReview(StatusReview.valueOf(StatusReview.PASSED.toString()
-                    .toUpperCase(Locale.ROOT)));
-            case 2 -> userReview.setStatusReview(StatusReview.valueOf(StatusReview.FAILED.toString()
-                    .toUpperCase(Locale.ROOT)));
+            case 1 -> userReview.setStatusReview(StatusReview.valueOf(
+                    StatusReview.PASSED.toString().toUpperCase(Locale.ROOT)));
+            case 2 -> userReview.setStatusReview(StatusReview.valueOf(
+                    StatusReview.FAILED.toString().toUpperCase(Locale.ROOT)));
         }
-
         reviewsDAO.save(userReview);
     }
 }
