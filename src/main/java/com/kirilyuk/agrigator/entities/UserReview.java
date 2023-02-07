@@ -22,10 +22,12 @@ public class UserReview {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "reviews", columnDefinition = "text")
+    @Column(name = "reviews")
     private String reviews;
 
-    private StatusReview statusReview;
+    @Enumerated(value = EnumType.STRING)
+    private StatusReview status;
 
-    private int statusReviewId;
+    @Column(name = "status_review_id")
+    private int status_review_id;
 }

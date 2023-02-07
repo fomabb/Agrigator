@@ -14,16 +14,7 @@ public interface ProductService {
 
     public List<Product> getTitleProduct(String title);
 
-
-    public List<Product> getCategoryDriveTechnology(String category);
-
-    public List<Product> getCategoryAutomationTechnology(String category);
-
-    public List<Product> getCategoryEverythingElse(String category);
-
     public List<Product> findByCategory(String category);
-
-    void productSave(Product product);
 
     /**
      * Methods for parsing

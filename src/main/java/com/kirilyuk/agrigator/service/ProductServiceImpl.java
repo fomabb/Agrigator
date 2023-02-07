@@ -15,7 +15,6 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductDAO dao;
 
-    @Autowired
     public ProductServiceImpl(ProductDAO dao) {
         this.dao = dao;
     }
@@ -39,33 +38,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getCategoryDriveTechnology(String category) {
-
-        return dao.getCategoryDriveTechnology(category);
-    }
-
-    @Override
-    public List<Product> getCategoryAutomationTechnology(String category) {
-
-        return dao.getCategoryAutomationTechnology(category);
-    }
-
-    @Override
-    public List<Product> getCategoryEverythingElse(String category) {
-
-        return dao.getCategoryEverythingElse(category);
-    }
-
-    @Override
     public List<Product> findByCategory(String category) {
 
         return dao.findByCategory(category);
-    }
-
-    @Override
-    public void productSave(Product product) {
-
-        dao.save(product);
     }
 
     @Override
