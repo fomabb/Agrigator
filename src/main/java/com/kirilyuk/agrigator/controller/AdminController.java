@@ -21,9 +21,11 @@ public class AdminController {
         this.usersService = usersService;
     }
 
-    @GetMapping("/find/all")
-    public List<Product> getAll() {
-        return productService.getAllProducts();
+    @GetMapping("/find/all/{page}/{pageSize}")
+    public List<Product> getAll(@PathVariable int page,
+                                @PathVariable int pageSize) {
+
+        return productService.getAllProducts(page, pageSize);
     }
 
     @GetMapping("/find/{id}")

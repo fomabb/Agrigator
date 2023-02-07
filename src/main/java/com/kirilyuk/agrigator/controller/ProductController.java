@@ -16,10 +16,11 @@ public class ProductController {
         this.service = service;
     }
 
-    @GetMapping("/find/all")
-    public List<Product> getAllProducts() {
+    @GetMapping("/find/all/{page}/{pageSize}")
+    public List<Product> getAllProducts(@PathVariable int page,
+                                        @PathVariable int pageSize) {
 
-        return service.getAllProducts();
+        return service.getAllProducts(page, pageSize);
     }
 
     @GetMapping("/find/{id}")

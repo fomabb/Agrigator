@@ -1,12 +1,13 @@
 package com.kirilyuk.agrigator.service;
 
 import com.kirilyuk.agrigator.entities.Product;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 
 public interface ProductService {
 
-    List<Product> getAllProducts();
+    List<Product> getAllProducts(int page, int pageSize);
 
     Product getProductById(Long id);
 

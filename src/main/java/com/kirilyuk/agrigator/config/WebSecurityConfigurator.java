@@ -48,6 +48,8 @@ public class WebSecurityConfigurator {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .cors()
+                .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/admin/**")

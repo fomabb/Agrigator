@@ -3,6 +3,7 @@ package com.kirilyuk.agrigator.service.impl;
 import com.kirilyuk.agrigator.dao.ProductDAO;
 import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductDAO dao;
 
+    @Autowired
     public ProductServiceImpl(ProductDAO dao) {
         this.dao = dao;
     }
@@ -51,13 +53,6 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> findAllProductByDescription(String text) {
 
         return dao.findAllProductByDescription(text);
-    }
-
-    @Override
-    @Transactional
-    public List<Product> searchTest() {
-
-        return dao.searchTest();
     }
 
 //    @Override
