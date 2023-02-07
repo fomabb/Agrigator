@@ -1,8 +1,10 @@
 package com.kirilyuk.agrigator.controller;
 
 import com.kirilyuk.agrigator.dto.FindAllDTO;
+import com.kirilyuk.agrigator.dto.UserReviewDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.service.ProductService;
+import com.kirilyuk.agrigator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +16,12 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService service;
+    private final UserService userService;
 
     @Autowired
-    public ProductController(ProductService service) {
+    public ProductController(ProductService service, UserService userService) {
         this.service = service;
+        this.userService = userService;
     }
 
     @GetMapping("/test")
@@ -66,5 +70,11 @@ public class ProductController {
     public List<Product> findByCategory(@RequestParam("category") String category) {
 
         return service.findByCategory(category);
+    }
+
+    @PostMapping("/save/reviews")
+    public void saveReviews(@RequestBody UserReviewDTO reviews) {
+
+        userService.saveReviews(reviews);
     }
 }

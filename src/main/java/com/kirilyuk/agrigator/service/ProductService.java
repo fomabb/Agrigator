@@ -23,6 +23,8 @@ public interface ProductService {
 
     public List<Product> findByCategory(String category);
 
+    void productSave(Product product);
+
     /**
      * Methods for parsing
      */

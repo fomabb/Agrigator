@@ -1,5 +1,6 @@
 package com.kirilyuk.agrigator.service;
 
+import com.kirilyuk.agrigator.dto.UserReviewDTO;
 import com.kirilyuk.agrigator.entities.Users;
 
 import java.util.List;
@@ -7,7 +8,9 @@ import java.util.List;
 public interface UserService {
     List<Users> getAllUsers();
 
-    public void deleteProduct(Long id);
+    void deleteProduct(Long id);
 
-    public void deleteAllProducts();
+    void deleteAllProducts();
+
+    void saveReviews(UserReviewDTO reviews);
 }

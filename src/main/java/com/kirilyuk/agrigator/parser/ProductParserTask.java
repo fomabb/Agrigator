@@ -111,7 +111,7 @@
 //                obj.setImage(i3.next());
 //                obj.setLink_production(i4.next());
 //                obj.setUnique_number(i5.next());
-//                service.save(obj);
+//                service.productSave(obj);
 //            }
 //        } catch (IOException e) {
 //            e.printStackTrace();

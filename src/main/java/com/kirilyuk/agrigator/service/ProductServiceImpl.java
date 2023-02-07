@@ -63,6 +63,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public void productSave(Product product) {
+
+        dao.save(product);
+    }
+
+    @Override
     public boolean isExist(String obj) {
         List<Product> allProduct = dao.findAll();
         for (Product p : allProduct) {

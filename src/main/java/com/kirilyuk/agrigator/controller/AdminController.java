@@ -1,11 +1,10 @@
 package com.kirilyuk.agrigator.controller;
 
 
-import com.kirilyuk.agrigator.entities.Product;
+import com.kirilyuk.agrigator.dto.UserReviewDTO;
 import com.kirilyuk.agrigator.entities.Users;
 import com.kirilyuk.agrigator.service.ProductService;
 import com.kirilyuk.agrigator.service.UserService;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -45,5 +44,11 @@ public class AdminController {
     public List<Users> getAllUsers() {
 
         return usersService.getAllUsers();
+    }
+
+    @PostMapping("/save/reviews")
+    public void saveReviews(@RequestBody UserReviewDTO reviews) {
+
+        usersService.saveReviews(reviews);
     }
 }
