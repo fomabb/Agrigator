@@ -1,8 +1,5 @@
 package com.kirilyuk.agrigator.service;
 
-import com.kirilyuk.agrigator.dto.ReviewUpdate;
-import com.kirilyuk.agrigator.dto.UserReviewDTO;
-import com.kirilyuk.agrigator.dto.UserReviewDataDTO;
 import com.kirilyuk.agrigator.entities.UserReview;
 import com.kirilyuk.agrigator.entities.Users;
 
@@ -15,13 +12,13 @@ public interface UserService {
 
     void deleteAllProducts();
 
-    void saveReviews(UserReviewDTO reviews);
+    void saveReviews(UserReview reviews);
 
-    List<UserReviewDataDTO> getAllReview();
+    List<UserReview> getAllStatusProcessed();
 
-    List<UserReviewDataDTO> getAllStatusProcessed(Integer status);
-
-    void updateReview(Long id, ReviewUpdate review);
+//    void updateReview(ReviewUpdateDTO review);
 
     UserReview getById(Long id);
+
+    List<UserReview> allReview();
 }

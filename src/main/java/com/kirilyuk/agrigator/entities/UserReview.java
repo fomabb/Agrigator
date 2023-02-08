@@ -16,16 +16,11 @@ public class UserReview {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "login")
-    private String login;
-
-    @Column(name = "email")
-    private String email;
-
     @Column(name = "reviews")
     private String reviews;
 
     @Enumerated(value = EnumType.STRING)
+    @Column(name = "status")
     private StatusReview status;
 
     @Column(name = "status_review_id")

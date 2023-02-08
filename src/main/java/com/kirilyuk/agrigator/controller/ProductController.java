@@ -1,9 +1,6 @@
 package com.kirilyuk.agrigator.controller;
 
 import com.kirilyuk.agrigator.dto.FindAllDTO;
-import com.kirilyuk.agrigator.dto.ReviewUpdate;
-import com.kirilyuk.agrigator.dto.UserReviewDTO;
-import com.kirilyuk.agrigator.dto.UserReviewDataDTO;
 import com.kirilyuk.agrigator.entities.Product;
 import com.kirilyuk.agrigator.entities.UserReview;
 import com.kirilyuk.agrigator.service.ProductService;
@@ -60,7 +57,7 @@ public class ProductController {
 //    ==================================================================================================================
 
     @PostMapping("/save/reviews")
-    public UserReviewDTO saveReviews(@RequestBody UserReviewDTO reviews) {
+    public UserReview saveReviews(@RequestBody UserReview reviews) {
 
         userService.saveReviews(reviews);
 
@@ -73,24 +70,23 @@ public class ProductController {
         return userService.getById(id);
     }
 
-    @PutMapping("/update/{id}")
-    public ReviewUpdate updateReviews(@PathVariable("id") Long id,
-                                      @RequestBody ReviewUpdate review) {
+    @PutMapping("/update")
+    public UserReview updateReviews(@RequestBody UserReview review) {
 
-        userService.updateReview(id, review);
+        userService.saveReviews(review);
 
         return review;
     }
 
-    @GetMapping
-    public List<UserReviewDataDTO> getAllReview() {
+    @GetMapping("/reviews")
+    public List<UserReview> getAllStatusProcessed() {
 
-        return userService.getAllReview();
+        return userService.getAllStatusProcessed();
     }
 
-    @GetMapping("/reviews")
-    public List<UserReviewDataDTO> getAllStatusProcessed(@RequestParam("status") Integer status) {
+    @GetMapping("/review/all")
+    public List<UserReview> allReview() {
 
-        return userService.getAllStatusProcessed(status);
+        return userService.allReview();
     }
 }

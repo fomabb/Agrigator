@@ -1,7 +1,7 @@
 package com.kirilyuk.agrigator.controller;
 
 
-import com.kirilyuk.agrigator.dto.UserReviewDTO;
+import com.kirilyuk.agrigator.entities.UserReview;
 import com.kirilyuk.agrigator.entities.Users;
 import com.kirilyuk.agrigator.service.ProductService;
 import com.kirilyuk.agrigator.service.UserService;
@@ -47,7 +47,7 @@ public class AdminController {
     }
 
     @PostMapping("/save/reviews")
-    public void saveReviews(@RequestBody UserReviewDTO reviews) {
+    public void saveReviews(@RequestBody UserReview reviews) {
 
         usersService.saveReviews(reviews);
     }
