@@ -73,4 +73,10 @@ public class UserServiceImpl implements UserService {
 
         return reviewsDAO.findAll();
     }
+
+    @Override
+    public List<UserReview> deleteReviewFailed() {
+
+        return reviewsDAO.deleteReviewFailed();
+    }
 }

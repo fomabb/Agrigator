@@ -21,4 +21,6 @@ public interface UserService {
     UserReview getById(Long id);
 
     List<UserReview> allReview();
+
+    List<UserReview> deleteReviewFailed();
 }

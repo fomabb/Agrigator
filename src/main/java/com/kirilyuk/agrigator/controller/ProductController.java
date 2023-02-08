@@ -89,4 +89,10 @@ public class ProductController {
 
         return userService.allReview();
     }
+
+    @DeleteMapping("/delete/failed")
+    public List<UserReview> deleteReviewFailed() {
+
+        return userService.deleteReviewFailed();
+    }
 }

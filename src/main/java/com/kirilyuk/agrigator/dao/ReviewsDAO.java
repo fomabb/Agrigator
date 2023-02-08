@@ -10,4 +10,7 @@ public interface ReviewsDAO extends JpaRepository<UserReview, Long> {
 
     @Query(value = "select * from reviews r where r.status_review_id=0", nativeQuery = true)
     List<UserReview> getAllStatusProcessed();
+
+    @Query(value = "delete from reviews r where r.status_review_id=2", nativeQuery = true)
+    List<UserReview> deleteReviewFailed();
 }
